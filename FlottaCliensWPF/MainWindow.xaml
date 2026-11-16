@@ -5,15 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlottaCliensWPF"
         mc:Ignorable="d"
-        Title="Flotta cliens" Height="450" Width="300">
+        Title="Flotta cliens" Height="450" Width="800">
     <Grid>
-        <StackPanel Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="10" Grid.Column="0">
             <Label Content="login name"/>
             <TextBox x:Name="loginnametxt" Text="proba"/>
             <Label Content="Password"/>
             <TextBox x:Name="passwordtxt" Text="proba1"/>
             <Button Content="Login" x:Name="loginbtn" Click="loginbtn_Click"/>
             <TextBlock x:Name="result" Text="Nincs bejelentkezve"/>
+            <Button x:Name="btnGetall" Content="Users" Click="btnGetall_Click"/>
         </StackPanel>
+        <DataGrid x:Name="dataagridunk" Grid.Column="1"/>
+
     </Grid>
 </Window>
